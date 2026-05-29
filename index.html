@@ -1236,25 +1236,23 @@
 
   /* ============ SCOPE BANNER ============ */
   .scope-banner {
-    max-width: 1200px;
-    margin: 0 auto 56px;
+    max-width: 560px;
+    margin: 60px auto 56px;
     background: white;
-    border-radius: 20px;
-    padding: 28px;
-    border: 2px solid var(--kitchen-saree-pink);
-    box-shadow: 0 16px 40px -16px rgba(155, 44, 92, 0.18);
+    border-radius: 18px;
+    padding: 24px;
+    border: 1px solid rgba(229,184,60,0.3);
+    box-shadow: 0 8px 24px -12px rgba(65,36,2,0.08);
   }
   .scope-banner h2 {
-    font-size: 22px;
+    font-size: 18px;
     color: var(--brand-cocoa);
     font-weight: 500;
-    margin-bottom: 4px;
+    margin-bottom: 0;
     letter-spacing: -0.01em;
   }
   .scope-banner .scope-sub {
-    color: var(--brand-cocoa-mid);
-    font-size: 14px;
-    margin-bottom: 22px;
+    display: none;
   }
   .scope-cols {
     display: grid;
@@ -1337,6 +1335,49 @@
   }
   .scope-footer strong { color: var(--brand-cocoa); font-weight: 500; }
   @media (max-width: 760px) { .scope-cols { grid-template-columns: 1fr; } }
+
+  /* ---- scope table (replaces bullet lists on mobile) ---- */
+  .scope-table {
+    border: 1px solid rgba(229,184,60,0.28);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 18px;
+  }
+  .scope-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 16px;
+    font-size: 13.5px;
+    color: var(--brand-cocoa);
+    border-bottom: 1px solid rgba(229,184,60,0.12);
+    line-height: 1.3;
+  }
+  .scope-row:last-child { border-bottom: none; }
+  .s-later-row { opacity: 0.5; }
+  .scope-divider-row {
+    background: rgba(250,199,117,0.1);
+    justify-content: flex-start;
+    padding: 7px 16px;
+  }
+  .scope-divider-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--brand-cocoa-soft);
+    font-weight: 500;
+  }
+  .s-badge {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+  .s-now   { background: #E1F5EE; color: #0F6E56; }
+  .s-later { background: #F0EDE8; color: #9E8570; }
 
   /* ============ SUBTLE / MOBILE-FRIENDLY OVERRIDES ============ */
   /* Calm down the body */
@@ -2818,38 +2859,21 @@
 
 
 <section class="scope-banner">
-  <h2>Ready today &middot; Maybe later</h2>
-  <div class="scope-sub">Everything on the left is yours to use from day one. Anything on the right, we'll add when your kitchen actually needs it.</div>
-  <div class="scope-cols">
-    <div class="scope-col in">
-      <h3>Ready today <span class="pill">10 things</span></h3>
-      <ul>
-        <li>One pinned-message order page on mobile</li>
-        <li>Name, block, flat. Saved on her phone, skipped next time</li>
-        <li>6 products with quantity chips and live total</li>
-        <li>Live order total, updates as she selects</li>
-        <li>&ldquo;Send to Netra&rdquo; auto-fills the order in her WhatsApp</li>
-        <li>Open and closed window (8 AM to 1 PM cutoff)</li>
-        <li>Password-protected dashboard. Phone or laptop</li>
-        <li>Today&rsquo;s orders, grouped by your 4 societies</li>
-        <li>One-tap &ldquo;forward&rdquo; to a society group (no prices shown)</li>
-        <li>You change product prices and turn items on or off</li>
-      </ul>
-    </div>
-    <div class="scope-col out">
-      <h3>Maybe later <span class="pill">when you ask</span></h3>
-      <ul>
-        <li>Customer history across all days</li>
-        <li>Page refreshes by itself when a new order arrives</li>
-        <li>You add or rename societies yourself</li>
-        <li>Online payments. UPI, GPay</li>
-        <li>Weekly or monthly subscription orders</li>
-        <li>SMS or push reminders</li>
-      </ul>
-    </div>
-  </div>
-  <div class="scope-footer">
-    Start small. Add the rest only when your business actually asks for it.
+  <h2>What&rsquo;s built for you</h2>
+  <div class="scope-table">
+    <div class="scope-row"><span>Order page on mobile</span><span class="s-badge s-now">Now</span></div>
+    <div class="scope-row"><span>Saved address</span><span class="s-badge s-now">Now</span></div>
+    <div class="scope-row"><span>Products + live total</span><span class="s-badge s-now">Now</span></div>
+    <div class="scope-row"><span>WhatsApp auto-fill</span><span class="s-badge s-now">Now</span></div>
+    <div class="scope-row"><span>Open / close window</span><span class="s-badge s-now">Now</span></div>
+    <div class="scope-row"><span>Dashboard + societies</span><span class="s-badge s-now">Now</span></div>
+    <div class="scope-row"><span>Forward list (no prices)</span><span class="s-badge s-now">Now</span></div>
+    <div class="scope-row"><span>Edit prices anytime</span><span class="s-badge s-now">Now</span></div>
+    <div class="scope-row scope-divider-row"><span class="scope-divider-label">When you need it</span></div>
+    <div class="scope-row s-later-row"><span>Order history</span><span class="s-badge s-later">Later</span></div>
+    <div class="scope-row s-later-row"><span>UPI &amp; GPay</span><span class="s-badge s-later">Later</span></div>
+    <div class="scope-row s-later-row"><span>Subscriptions</span><span class="s-badge s-later">Later</span></div>
+    <div class="scope-row s-later-row"><span>SMS reminders</span><span class="s-badge s-later">Later</span></div>
   </div>
 </section>
 <!-- step 1 - pinned message -->
